@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:myapp/core/functions/navigate.dart';
 import 'package:myapp/core/utils/app_strings.dart';
 import 'package:myapp/core/utils/app_text_style.dart';
 
@@ -14,7 +15,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      GoRouter.of(context).push('/onBoarding');
+      routerMethod(context, '/onBoarding');
     });
     super.initState();
   }
