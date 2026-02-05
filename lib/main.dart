@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/core/utils/app_colors.dart';
 import 'package:myapp/core/utils/app_router.dart';
 import 'package:myapp/core/utils/app_strings.dart';
 import 'package:myapp/core/utils/app_theme.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: AppStrings.appName,
       routerConfig: router,
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
+      theme: ThemeData(scaffoldBackgroundColor: AppColors.offWhite),
     );
   }
 }
