@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/utils/app_router.dart';
+import 'package:myapp/core/utils/app_strings.dart';
 import 'package:myapp/core/utils/app_theme.dart';
 
 void main() {
@@ -13,9 +14,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Demo',
-      theme: AppTheme.lightTheme,
+      title: AppStrings.appName,
       routerConfig: router,
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.lightTheme,
     );
   }
 }
