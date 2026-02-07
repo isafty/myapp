@@ -9,4 +9,16 @@ class AppTextStyle {
     color: AppColors.deepBrown,
     fontFamily: "Pacifico",
   );
+  static const poppins500style24 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.w500,
+    color: AppColors.black,
+    fontFamily: "Poppins",
+  );
+  static const poppins400style18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    color: AppColors.deepBrown,
+    fontFamily: "Poppins",
+  );
 }

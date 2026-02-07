@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:myapp/core/functions/navigate.dart';
 import 'package:myapp/core/utils/app_strings.dart';
 import 'package:myapp/core/utils/app_text_style.dart';

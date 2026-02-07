@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:myapp/core/utils/app_colors.dart';
 import 'package:myapp/core/utils/app_router.dart';
 import 'package:myapp/core/utils/app_strings.dart';
-import 'package:myapp/core/utils/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
