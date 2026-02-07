@@ -4,8 +4,13 @@ import 'package:myapp/features/on_boarding/data/models/on_boarding_model.dart';
 import 'package:myapp/features/on_boarding/ui/view/widgets/custom_smoth_page_indicator.dart';
 
 class OnBoeardingWidgetBody extends StatelessWidget {
-  const OnBoeardingWidgetBody({super.key, required this.controller});
+  const OnBoeardingWidgetBody({
+    super.key,
+    required this.controller,
+    this.onPageChanged,
+  });
   final PageController controller;
+  final Function(int)? onPageChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +18,7 @@ class OnBoeardingWidgetBody extends StatelessWidget {
       height: 500,
       width: double.infinity,
       child: PageView.builder(
+        onPageChanged: onPageChanged,
         controller: controller,
         itemCount: onBoardingData.length,
         itemBuilder: (context, index) {

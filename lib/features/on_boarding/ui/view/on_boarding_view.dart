@@ -5,15 +5,15 @@ import 'package:myapp/features/on_boarding/ui/view/widgets/custom_skip.dart';
 import 'package:myapp/features/on_boarding/ui/view/widgets/on_boarding_page_view.dart';
 
 class OnBoardingView extends StatefulWidget {
- OnBoardingView({super.key});
-
+  OnBoardingView({super.key});
 
   @override
   State<OnBoardingView> createState() => _OnBoardingViewState();
 }
 
 class _OnBoardingViewState extends State<OnBoardingView> {
-    final PageController _controller = PageController(initialPage: 0);
+  final PageController _controller = PageController(initialPage: 0);
+  int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,11 +25,23 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             children: [
               const CustomSkip(),
               const SizedBox(height: 20),
-              OnBoeardingWidgetBody(controller: _controller,),
+              OnBoeardingWidgetBody(
+                controller: _controller,
+                onPageChanged: (index) {
+                  setState(() {});
+                  currentPageIndex = index;
+                },
+              ),
               const SizedBox(height: 90),
-              Custombtn(text: AppStrings.next,onPressed: (){
-                _controller.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
-              },),
+              Custombtn(
+                text: AppStrings.next,
+                onPressed: () {
+                  _controller.nextPage(
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
             ],
           ),
         ),
