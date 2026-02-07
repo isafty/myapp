@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/core/utils/app_assets.dart';
 import 'package:myapp/core/utils/app_text_style.dart';
 import 'package:myapp/features/on_boarding/data/models/on_boarding_model.dart';
 import 'package:myapp/features/on_boarding/ui/view/widgets/custom_smoth_page_indicator.dart';
 
 class OnBoeardingWidgetBody extends StatelessWidget {
-  OnBoeardingWidgetBody({super.key});
-  final PageController _controller = PageController();
+  const OnBoeardingWidgetBody({super.key, required this.controller});
+  final PageController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,7 @@ class OnBoeardingWidgetBody extends StatelessWidget {
       height: 500,
       width: double.infinity,
       child: PageView.builder(
-        controller: _controller,
+        controller: controller,
         itemCount: onBoardingData.length,
         itemBuilder: (context, index) {
           return Column(
@@ -30,7 +29,7 @@ class OnBoeardingWidgetBody extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20),
-              CustomSmothPageIndicator(controller: _controller),
+              CustomSmothPageIndicator(controller: controller),
               Text(
                 onBoardingData[index].title,
                 style: AppTextStyle.poppins500style24,

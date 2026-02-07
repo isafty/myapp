@@ -5,9 +5,6 @@ import 'package:myapp/features/splash/ui/view/splash_view.dart';
 final GoRouter router = GoRouter(
   routes: [
     GoRoute(path: '/', builder: (context, state) => const SplashView()),
-    GoRoute(
-      path: '/onBoarding',
-      builder: (context, state) => const OnBoardingView(),
-    ),
+    GoRoute(path: '/onBoarding', builder: (context, state) => OnBoardingView()),
   ],
 );
