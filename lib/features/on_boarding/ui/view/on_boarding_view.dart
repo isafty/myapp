@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/core/database/cach/cach_helper.dart';
 import 'package:myapp/core/functions/navigate.dart';
 import 'package:myapp/features/on_boarding/ui/view/widgets/custom_get_buttons.dart';
 import 'package:myapp/features/on_boarding/ui/view/widgets/custom_skip.dart';
@@ -25,6 +26,10 @@ class _OnBoardingViewState extends State<OnBoardingView> {
             children: [
               CustomSkip(
                 onTap: () {
+                  CacheHelper().saveData(
+                    key: "isOnBoardingVisited",
+                    value: true,
+                  );
                   pushReplaceNavigate(context, '/login');
                 },
               ),

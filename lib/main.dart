@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/core/database/cach/cach_helper.dart';
 import 'package:myapp/core/utils/app_colors.dart';
 import 'package:myapp/core/utils/app_router.dart';
 import 'package:myapp/core/utils/app_strings.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await CacheHelper().init();
   runApp(const MyApp());
 }
 
