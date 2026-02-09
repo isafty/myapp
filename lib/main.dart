@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/database/cach/cach_helper.dart';
+import 'package:myapp/core/services/service_locator.dart';
 import 'package:myapp/core/utils/app_colors.dart';
 import 'package:myapp/core/utils/app_router.dart';
 import 'package:myapp/core/utils/app_strings.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await CacheHelper().init();
+  setupServiceLocator();
+  await getIt<CacheHelper>().init();
   runApp(const MyApp());
 }
 

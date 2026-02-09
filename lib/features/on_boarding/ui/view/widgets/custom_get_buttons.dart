@@ -3,6 +3,7 @@ import 'package:myapp/core/functions/navigate.dart';
 import 'package:myapp/core/utils/app_strings.dart';
 import 'package:myapp/core/widgets/custombtn.dart';
 import 'package:myapp/features/on_boarding/data/models/on_boarding_model.dart';
+import 'package:myapp/features/on_boarding/ui/view/function/on_boarding_fn.dart';
 
 class GetButtons extends StatelessWidget {
   const GetButtons({
@@ -20,12 +21,14 @@ class GetButtons extends StatelessWidget {
               Custombtn(
                 text: AppStrings.createAccount,
                 onPressed: () {
+                  onBoardingVisited();
                   pushReplaceNavigate(context, '/signup');
                 },
               ),
               const SizedBox(height: 20),
               TextButton(
                 onPressed: () {
+                  onBoardingVisited();
                   pushReplaceNavigate(context, '/login');
                 },
                 child: Text(AppStrings.loginNow),
